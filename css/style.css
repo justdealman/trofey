@@ -1757,11 +1757,26 @@ h1 {
 }
 .item-e .text h6 span i.rating-icon {
 	display:inline-block;
-	width:60px;
+	width:58px;
 	height:10px;
 	vertical-align:top;
 	margin:3px 3px 0 0;
 	background:url('../img/rating-icon.png') no-repeat 0 0;
+}
+.item-e .text h6 span i.rating-icon.rate-1 {
+	background-position:0 -10px;
+}
+.item-e .text h6 span i.rating-icon.rate-2 {
+	background-position:0 -20px;
+}
+.item-e .text h6 span i.rating-icon.rate-3 {
+	background-position:0 -30px;
+}
+.item-e .text h6 span i.rating-icon.rate-4 {
+	background-position:0 -40px;
+}
+.item-e .text h6 span i.rating-icon.rate-5 {
+	background-position:0 -50px;
 }
 .item-e .text h6 em {
 	font-style:normal;
