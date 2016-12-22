@@ -267,7 +267,7 @@ $(function() {
 			adaptiveHeight: true
 		});
 	});
-	$('[data-card] .preview').slick({
+	$('.product-b .card .preview').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		vertical: true,
@@ -279,18 +279,6 @@ $(function() {
 				}
 			}
 		]
-	});
-	$('[data-card] [data-preview]').on('click', function(e) {
-		e.preventDefault();
-		var t = $(this).parents('[data-card]');
-		var id = $(this).attr('data-preview');
-		t.find('[data-big="'+id+'"]').addClass('active').siblings().removeClass('active');
-		$(this).parent().addClass('active').siblings().removeClass('active');
-	});
-	$('[data-card] [data-slick-index="0"] [data-preview]').trigger('click');
-	$('[data-card] .preview').on('afterChange', function() {
-		var current = $(this).find('.item.active > div').attr('data-preview');
-		$(this).find('.item > div[data-preview="'+current+'"]').parent().addClass('active');
 	});
 	$('.new-today .core .item > div').on('mouseenter', function() {
 		var t = $(this).find('h5');
@@ -368,7 +356,7 @@ $(function() {
 	$('.menu-open, .mobile-drop').on('click', function(e) {
 		e.stopPropagation();
 	});
-	$('input[type="checkbox"], input[type="radio"]').uniform();
+	$('input[type="checkbox"]').uniform();
 	$('.price-range').each(function() {
 		var t = $(this)
 		var thisMin = eval(t.find('.slide').attr('data-min'));
@@ -445,29 +433,4 @@ $(function() {
 		e.stopPropagation();
 	});
 	$('select').selectric();
-	$('[data-rating-fixed]').each(function() {
-		$(this).addClass('rate-'+$(this).attr('data-current'));
-	});
-	$('[data-favorite-toggle]').on('click', function(e) {
-		e.preventDefault();
-		$(this).toggleClass('active');
-	});
-	$('[data-compare-toggle]').on('click', function(e) {
-		e.preventDefault();
-		$(this).toggleClass('active');
-	});
-	$('[data-open]').on('click', function(e) {
-		e.preventDefault();
-		var t = $('.modal[data-target="'+$(this).attr('data-open')+'"]');
-		$('.fade').stop(true,true).fadeIn(300);
-		var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
-		t.css({
-			'top': h+'px'
-		}).stop(true,true).fadeIn(300).siblings('[data-target]').stop(true,true).fadeOut(300);
-		formLabel();
-	});
-	$('.fade, .modal .close').on('click', function(e) {
-		e.preventDefault();
-		$('.fade, .modal').stop(true,true).fadeOut(300);
-	});
 });
