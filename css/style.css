@@ -2732,6 +2732,9 @@ h1 {
 	margin:0 13px 10px 0;
 	border:1px solid #e3e3e3;
 }
+.product-b .colors ul li.active {
+	display:none;
+}
 .product-b .desc {
 	margin:39px 0 15px;
 }
